@@ -7,6 +7,8 @@ import SearchBar from "./SearchBar";
 import AuthorsList from "./AuthorsList";
 import AuthorDetail from "./AuthorDetail";
 
+import author from "./data";
+
 class App extends Component {
   constructor(props) {
     super(props);
