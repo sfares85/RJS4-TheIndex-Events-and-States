@@ -88,7 +88,7 @@ Let's make it so that clicking on an author changes the content.
 
 
 
-####3. Unselecting an Author
+#### 3. Unselecting an Author
 
 We need a way to go back to the author list view without refreshing the page.  
 When a user clicks on "AUTHORS" in the sidebar, they should go back to the list view:
@@ -98,7 +98,7 @@ When a user clicks on "AUTHORS" in the sidebar, they should go back to the list 
 
 
 
-####4. Search Bar
+#### 4. Search Bar
 
 We want our users to be able to search through the authors in the list view:
 
