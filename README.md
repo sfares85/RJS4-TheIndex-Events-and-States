@@ -141,11 +141,16 @@ export default SearchBar;
 ```
 
 Take some time to really understand what this component is doing. [This](https://reactjs.org/docs/forms.html#controlled-components) article might help.
+
 2. Import the `SearchBar` into the `AuthorList` and render it near the top of the page.
-3. Add a `filterAuthors = query => { ... }` method to `App`. This method should filter the authors in `authors` based on the `query`. Things to think about:
+
+3. Add a `filterAuthors = query => { ... }` method to `App`. This method should filter the authors in `authors` based on the `query`. 
+Things to think about:
     - You will need to have **two** arrays in the state. One for the **authors** and one for the **filtered authors**.
     - How can you [filter](https://warehouse.joincoded.com/workshop/javascript-episode-iii/array-iteration-methods/filter/) an array based on some condition?
     - How do you know if a string [includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes) another string?
     - How do you make the search case-**in**sensitive?
+    
 4. Pass your `filterAuthors` method to the `SearchBar` component.
+
 5. Call the passed in `filterAuthors` method every time there's a change in the input field.
