@@ -15,7 +15,7 @@ function AuthorsList(props) {
 
   return (
     <div className="authors">
-      <SearchBar />
+      <SearchBar filterAuthors={props.filterAuthors} />
       <h3>Authors</h3>
       <div className="row">{authorCards}</div>
     </div>

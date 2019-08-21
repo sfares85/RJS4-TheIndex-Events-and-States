@@ -10,7 +10,9 @@ import AuthorDetail from "./AuthorDetail";
 
 class App extends Component {
   state = {
-    currentAuthor: null
+    currentAuthor: null,
+    authors: authors,
+    filteredAuthors: authors
   };
   selectAuthor = author => {
     this.setState({ currentAuthor: author });
@@ -18,12 +20,25 @@ class App extends Component {
   unselectAuthor = () => {
     this.setState({ currentAuthor: null });
   };
-  filterAuthors = query => {};
-  selectView = () => {
+  filterAuthors = query => {
+    let filteredAuthors = this.state.authors.filter(author => {
+      const name = `${author.first_name} ${author.last_name}`;
+      return name.toLowerCase().includes(query.toLowerCase());
+    });
+    this.setState({ filteredAuthors: filteredAuthors });
+  };
+  selectView = (author = null) => {
     if (this.state.currentAuthor)
       return <AuthorDetail author={this.state.currentAuthor} />;
     else
-      return <AuthorsList authors={authors} selectAuthor={this.selectAuthor} />;
+      return (
+        <AuthorsList
+          authors={this.state.filteredAuthors}
+          selectAuthor={this.selectAuthor}
+          filterAuthors={this.filterAuthors}
+          filteredAuthors={this.state.filteredAuthors}
+        />
+      );
   };
   render() {
     return (

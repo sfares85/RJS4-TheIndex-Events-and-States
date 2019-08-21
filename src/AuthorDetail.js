@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BookRows from "./BookRows";
 
 class AuthorDetail extends Component {
   render() {
@@ -25,16 +26,7 @@ class AuthorDetail extends Component {
             alt={this.props.author.first_name}
           />
         </div>
-        <table className="mt-3 table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Authors</th>
-              <th>Color</th>
-            </tr>
-          </thead>
-          <tbody>{authorBooks} </tbody>
-        </table>
+        <BookRows authorBooks={authorBooks} />
       </div>
     );
   }
